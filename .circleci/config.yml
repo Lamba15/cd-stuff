@@ -18,10 +18,6 @@ jobs:
       - image: python:3.7-alpine3.11
     steps:
       - checkout
-      - add_ssh_keys:
-          # You can get this ID in the section where you registered the SSH Key
-          fingerprints:
-            - "2c:ab:0e:f6:14:47:4d:44:53:25:78:2c:08:85:f4:d4"
       - run:
           name: Install Ansible
           command: |

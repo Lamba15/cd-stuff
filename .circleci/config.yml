@@ -47,7 +47,7 @@ jobs:
           name: smoke test
           command: |
             return 1
-      - destory_enviroment
+      - destroy_environment
   # Name the workflow
 workflows:
   my_workflow:

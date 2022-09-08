@@ -28,6 +28,7 @@ jobs:
               --template-file template.yaml \
               --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:7} \
               --region us-east-1
+      - destroy_environment
   configure_infrastructure:
     docker:
       - image: python:3.7-alpine3.11
@@ -44,7 +45,7 @@ jobs:
     # Exercise: Smoke Testing
   smoke_test:
     docker:
-     - image: alpine:latest
+      - image: amazon/aws-cli
     steps:
       - run: apk add --update curl
       - run:
